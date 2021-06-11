@@ -11,6 +11,7 @@ public class StreamsApiTest2 {
         init();
         calculateTotalSalary();
         calculateTotalSalaryInADepartment();
+        calculateAverageSalaryInADepartment();
     }
 
     private static void init(){
@@ -18,6 +19,7 @@ public class StreamsApiTest2 {
         employees.add(new Employee(1,"20000", 30,1));
         employees.add(new Employee(2,"25000", 32,1));
         employees.add(new Employee(3,"10000", 23,2));
+        employees.add(new Employee(4,"18000", 32,1));
     }
 
     private static void calculateTotalSalary(){
@@ -34,6 +36,17 @@ public class StreamsApiTest2 {
                 .map(Employee::getSalary)
                 .map(Integer::parseInt)
                 .reduce(0,Integer::sum);
-        System.out.println("Department 1 Total Salary: "+deptTotalSalary);
+        System.out.println("\nDepartment 1 Total Salary: "+deptTotalSalary);
+    }
+
+    private static void calculateAverageSalaryInADepartment(){
+        System.out.println("\nAverage Salary in Department 1: ");
+        employees.stream()
+                .filter(employee -> employee.getDeptId() == 1)
+                .map(Employee::getSalary)
+                .map(Integer::parseInt)
+                .mapToInt(salary->salary)
+                .average()
+                .ifPresent(System.out::println);
     }
 }
