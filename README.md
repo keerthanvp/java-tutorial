@@ -1,10 +1,20 @@
 # java-tutorial
-Countdown Latch
-Cyclic barrier
-Semaphore
-Concurrent Hashmap
-Hashmap
-Synchronization
-Java 8 features
-  Completable Future
-  Executor Service
+
+1) Countdown Latch
+
+2) Cyclic barrier
+
+3) Semaphore
+
+4) Concurrent Hashmap
+
+5) Hashmap
+
+6) Synchronization
+
+7) Java 8 features
+
+      a) Completable Future 
+
+      b) Executor Service
+
